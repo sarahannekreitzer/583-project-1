@@ -1,42 +1,44 @@
 // client-side js
 // run by the browser each time your view template is loaded
+/* global Chart, ScrollMagic */
 
-console.log('hello world :o');
+document.addEventListener("DOMContentLoaded", () => {
+  // client-side js
+  // run by the browser each time your view template is loaded
+  
+  // Header sticky
+  console.log('testing to make sure headers.js is linked up');
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+          document.getElementById("header").style.top = "0";
+      } else {
+          document.getElementById("header").style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+  }
 
-// our default array of dreams
-const dreams = [
-  'Find and count some sheep',
-  'Climb a really tall mountain',
-  'Wash the dishes'
-];
+  console.log('hello world, my DOM is loaded :o');
+  
+  
+  
+  // Scroll Magic
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
 
-// define variables that reference elements on our page
-const dreamsList = document.getElementById('dreams');
-const dreamsForm = document.forms[0];
-const dreamInput = dreamsForm.elements['dream'];
+  // get all slides
+  var slides = document.querySelectorAll("section.panel");
 
-// a helper function that creates a list item for a given dream
-const appendNewDream = function(dream) {
-  const newListItem = document.createElement('li');
-  newListItem.innerHTML = dream;
-  dreamsList.appendChild(newListItem);
-}
-
-// iterate through every dream and add it to our page
-dreams.forEach( function(dream) {
-  appendNewDream(dream);
-});
-
-// listen for the form to be submitted and add a new dream when it is
-dreamsForm.onsubmit = function(event) {
-  // stop our form submission from refreshing the page
-  event.preventDefault();
-
-  // get dream value and add it to the list
-  dreams.push(dreamInput.value);
-  appendNewDream(dreamInput.value);
-
-  // reset form 
-  dreamInput.value = '';
-  dreamInput.focus();
-};
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+      .addTo(controller);
+  }
+  });
