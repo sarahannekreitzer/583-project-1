@@ -4,6 +4,7 @@
 // init project
 const express = require('express');
 const app = express();
+var fs = require('fs');
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -26,11 +27,7 @@ var marvel = api.createClient({
 
 marvel.characters.findByName('spider-man')
   .then(function(res) {
-    console.log('Found character ID', res.data[0].id);
-  })
-  .then(function(res) {
-    console.log('found %s comics of %s total', res.meta.count, res.meta.total);
-    console.log(res.data);
+    console.log('Found character ID', res.data[0].name, res.data[0].id); 
   })
   .fail(console.error)
   .done();
@@ -39,3 +36,5 @@ marvel.characters.findByName('spider-man')
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+
