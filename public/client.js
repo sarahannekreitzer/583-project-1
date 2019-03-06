@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log('The DOM is loaded');
   
-  
   // Scroll Magic
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
-    triggerHook: 'onLeave',
-    vertical: false
+    triggerHook: 'onLeave'
     }
   });
 
@@ -26,4 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .setPin(slides[i])
       .addTo(controller);
   }
-  });
+});
+
+
+
