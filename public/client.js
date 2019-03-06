@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll Magic
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
-      triggerHook: 'onLeave'
+    triggerHook: 'onLeave',
+    vertical: false
     }
   });
 
