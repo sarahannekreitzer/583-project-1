@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     var arrCharacter = [];
     var arrNumberComics = [];
-    var data =   
+    var data = 
   
    data.map((characters) => {
-      var charactersname = character.data.fullName;
+      var charactersname = character.data.name;
       var comicsData = character.data.comics.available;
 
       arrCharacter.push(characterslabel);
