@@ -6,11 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log('The DOM is loaded');
   
-  (function() {
 
   // fetch
   
-  fetch('/characters')
+  fetch('/series')
+    .then(resp => resp.json()).then((data) => {
+    console.group('%cResponse from /series', 'color: #222222; font-size: large');
+    console.log(data);
+    console.groupEnd();
+  })  
+  
+   fetch('/characters')
     .then(resp => resp.json()).then((data) => {
     console.group('%cResponse from /characters', 'color: #222222; font-size: large');
     console.log(data);
@@ -18,62 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
   })
   
-  
-  fetch('/series')
-    .then(resp => resp.json()).then((data) => {
-    console.group('%cResponse from /series', 'color: #222222; font-size: large');
-    console.log(data);
-    console.groupEnd();
-  
-  })  
-  
-  // Spider-Man
-  fetch('/spider-man').then(resp => resp.json()).then((data) => {
-    console.group('%cResponse from /spider-man', 'color: #4B9CD3; font-size: large');
-    console.log(data);
-    console.groupEnd();  
-    
-    
-    //ajax request 
-  
-  
-   var series = '';
-  
-   $.ajax({
-    type:'GET',
-    url: './series.json',
-    data: series,
-    async: true,
-    dataType:'json',
-    error: function(series, white){ console.log('Call failed'); },
-    success:function(series){
-      console.log('call success');
-      console.log(series[0].startYear);
-  
-  // This was taken from the chart.js sample library https://www.chartjs.org/samples/latest/
-  
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
-    type: 'bar',
-    // data
-    data: {
-        labels: ["Iron Man, Captain America, Black Widow, the Hulk, Black Panther"],
-        datasets: [{
-            label: "Most Popular in Comics",
-            backgroundColor: '#C60404',
-            borderColor: '#C60404',
-            data: [16, 96, 25, 27, 26, 8, 205, 23, 44, 18],
-                }]
-            },
-    
-    // Configuration options go here
-    options: {
-    }
-          });
-  
-      } //close success
-  }); //close ajax
-  
+  var arrName = [];
+    var arrComicsStats = [];
+    var arrSeriesStats = [];
+    var arrStoriesStats = [];
   
   // Scroll Magic code, copied from scrollmagic.io
   var controller = new ScrollMagic.Controller({
@@ -93,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .setPin(slides[i])
       .addTo(controller);
   }
-});
-
-})();
-    
+  
+  
    // Closing brackets for DOM loaded
 });
+
+
