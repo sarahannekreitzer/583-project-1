@@ -11,6 +11,11 @@ body {
   margin: 0 auto;
 }
 
+h1 {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 .panel {
   height: 100vh;
@@ -22,7 +27,7 @@ body {
 }
 
 .blue { 
-  background-color: blue;
+  background-color: maroon;
 }
 
 .green { 
