@@ -23,6 +23,10 @@ h1 {
 h2 { 
   font-family: 'Playfair Display', serif;
 }
+
+#bold {
+  font-weight: 700;
+}
   
 
 .panel {
@@ -102,6 +106,20 @@ h2 {
 .grid-2 {
   display:grid;
   grid-template-columns: fr;
-  grid-template-rows: 100px 300px 100px;
+  grid-template-rows: 200px 400px 100px;
 }
 
+#panel-2-title {
+  text-align: center;
+  vertical-align: 
+  font-size: 80px;
+}
+#panel-2-text {
+  border-left:solid #881D1D 4px;
+  padding: 20px;
+  margin: 50px;
+}
+
+#panel-2-footer { 
+  text-align: center;
+}
