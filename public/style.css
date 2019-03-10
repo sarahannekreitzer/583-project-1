@@ -7,8 +7,11 @@
 
 body {
   /* font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif; */ 
-  font-family: 'Playfair Display', serif;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0 auto;
+  color: #222222;
 }
 
 h1 {
@@ -16,6 +19,11 @@ h1 {
   font-weight: 700;
   font-style: normal;
 }
+
+h2 { 
+  font-family: 'Playfair Display', serif;
+}
+  
 
 .panel {
   height: 100vh;
@@ -41,6 +49,20 @@ h1 {
 .bordeaux { 
   background-color: maroon;
 }
+
+.white {
+  background-color: white;
+}
+
+/* flex */ 
+.flex { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+
+/* panel 1 */
 
 
 
