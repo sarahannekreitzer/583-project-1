@@ -19,7 +19,6 @@ app.get('/', function(request, response) {
 
 
 
-
 // Marvel API + Key
 var api = require('marvel-api');
  
@@ -30,8 +29,61 @@ var marvel = api.createClient({
 
 // Make an API Call. Pulling data and logging it in the console
 
+ marvel.characters.findAll()
+  .then(function(data) {
+    // console.log(data.data);
+    return new Promise(function(resolve, reject){
+      fs.writeFile('characters.json', JSON.stringify(data.data, null, 2), (err) => {
+      if(err) reject (err);
+        else resolve();
+        console.log('characters found');
 
-marvel.characters.findByName('spider-man')
+      });
+    });
+      
+  })
+  .fail(console.error) 
+  .done();
+
+
+  marvel.series.findAll()
+  .then(function(data) {
+    // console.log(data.data);
+    return new Promise(function(resolve, reject){
+      fs.writeFile('series.json', JSON.stringify(data.data, null, 2), (err) => {
+      if(err) reject (err);
+        else resolve();
+        console.log('series found');
+
+      });
+    });
+      
+  })
+  .fail(console.error) 
+  .done();
+
+
+marvel.characters.comics('1011334')
+  .then(console.log)
+  .fail(console.error)
+  .done();
+
+app.get('/characters', function(request, response) {
+  response.sendFile(__dirname + '/characters.json');
+
+});
+
+app.get('/creators', function(request, response) {
+  response.sendFile(__dirname + '/creators.json');
+});
+
+app.get('/series', function(request, response) {
+  response.sendFile(__dirname + '/series.json');
+});
+
+ 
+
+/*marvel.characters.findByName('spider-man')
   .then(function(res) {
     console.log('Found character ID', res.data[0].name, res.data[0].id); 
   
@@ -44,7 +96,7 @@ marvel.characters.findByName('spider-man')
     });    
   })
   .fail(console.error)
-  .done();
+  .done(); */
 
 
 // listen for requests. KEEP AT BOTTOM
