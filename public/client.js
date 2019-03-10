@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log('The DOM is loaded');
   
-  
+  (function() {
+
   // fetch
   
   fetch('/characters')
@@ -44,23 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
     data: series,
     async: true,
     dataType:'json',
-    error: function(series, white){ console.log('Your ajax call failed. Sorry fam.'); },
+    error: function(series, white){ console.log('Call failed'); },
     success:function(series){
-      console.log('series ajax call success');
+      console.log('call success');
       console.log(series[0].startYear);
   
   // This was taken from the chart.js sample library https://www.chartjs.org/samples/latest/
   
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
-    // The type of chart we want to create
     type: 'bar',
-
-    // The data for our dataset
+    // data
     data: {
-        labels: ["Agent Brand", "Absorbing Man", "Agent Zero", "Aaron Stack", "Abomination", "Abyss", "Adam Warlock", "Agent X", "Agents of Atlas", "Witch Hunter Angela"],
+        labels: ["Iron Man, Captain America, Black Widow, the Hulk, Black Panther"],
         datasets: [{
-            label: "Number of Stories Each Character is In",
+            label: "Most Popular in Comics",
             backgroundColor: '#C60404',
             borderColor: '#C60404',
             data: [16, 96, 25, 27, 26, 8, 205, 23, 44, 18],
@@ -75,8 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } //close success
   }); //close ajax
   
-    
-    
   
   // Scroll Magic code, copied from scrollmagic.io
   var controller = new ScrollMagic.Controller({
@@ -98,8 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
+})();
     
    // Closing brackets for DOM loaded
 });
