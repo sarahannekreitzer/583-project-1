@@ -133,27 +133,49 @@ h2 {
 /* panel 3 */
 .grid-3 {
   display:grid;
-  grid-template-columns: 5% 27% 5% 27% 5% 27% 5%;
-  grid-template-rows: 200px 600px;
+  grid-template-columns: 10px 1fr 1fr 1fr 10px;
+  grid-template-rows: 75px 300px 300px;
+  grid-gap: 5px;
 }
 
 .panel-3-titles {
-  grid-column: 3/6;
+  grid-column: 3/4;
   background-color: white;
 } 
 
-.heroes {
+.iron-man {
   grid-column: 2/3;
+  grid-row: 2/3;
   background-color: white;
 }
 
-.aliens {
+.captain-america {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-color: white;
+}
+
+.thor {
   grid-column: 4/5;
+  grid-row: 2/3;
   background-color: white;
 }
 
-.fights {
-  grid-column: 6/7;
+.black-widow {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  background-color: white;
+}
+
+.black-panther {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  background-color: white;
+}
+
+.spider-man {
+  grid-column: 4/5;
+  grid-row: 3/4;
   background-color: white;
 }
 
