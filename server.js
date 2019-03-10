@@ -27,25 +27,24 @@ var marvel = api.createClient({
 
 // Make an API Call. Pulling data and logging it in the console
 
-return new Promise(function(resolve, reject) {
-
- fs.writeFile(‘characters.json’, JSON.stringify(data.data, 	null, 2), err => {
-	if(err) reject(err),
-		else resolve( ); 
-		console.log(‘hi there we did it’);
-
-});
-
-
 
 marvel.characters.findByName('spider-man')
   .then(function(res) {
     console.log('Found character ID', res.data[0].name, res.data[0].id); 
+  
+      return new Promise(function(resolve, reject) { 
+      fs.writeFile("./spider-man.json", JSON.stringify(res.data[0], null, 2), (err) => {
+        if (err) reject(err);
+        else resolve();
+        console.log('Spidey has been made');
+      });
+    });    
   })
   .fail(console.error)
   .done();
 
-// listen for requests 
+
+// listen for requests. KEEP AT BOTTOM
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
