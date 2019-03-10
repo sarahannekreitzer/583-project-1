@@ -24,7 +24,7 @@ h2 {
   font-family: 'Playfair Display', serif;
 }
 
-#bold {
+.bold {
   font-weight: 700;
 }
   
@@ -126,6 +126,6 @@ h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-style: italic;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
 }
