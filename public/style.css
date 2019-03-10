@@ -30,9 +30,9 @@ h2 {
   width: 100vw;
 }
 
-.panel {
+/*.panel {
   margin-bottom: 600px;
-}
+}*/
 
 .blue { 
   background-color: maroon;
@@ -68,15 +68,24 @@ h2 {
   justify-content: center;
 }
 
+.center {
+  display: flex; 
+  align-items: center!important;
+  justify-content: center!important;
+  flex-direction: column;
+}
+
+
 /* panel 1 */
 
 
 .intro-panel { 
   color: white;
   font-size: 60px;
+  margin-bottom: 0px;
 }
 #outline {
-  -webkit-text-fill-color: maroon;
+  -webkit-text-fill-color: maro;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
 }
@@ -85,5 +94,6 @@ h2 {
   font-weight: 700;
   font-style: italic;
   font-size: 30px;
+  margin-top: 0px;
 }
 
