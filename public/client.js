@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.groupEnd();  
     
     
+   
     
    // Closing brackets for DOM loaded
 });

@@ -133,16 +133,17 @@ h2 {
 /* panel 3 */
 .grid-3 {
   display:grid;
-  grid-template-columns: fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 200px 600px;
 }
+
+.panel-3-title {
+  grid-template-row: 
+} 
 
 .item { 
   align-self: flex-end;
 }
-
-
-/* slider */
 
 
 
