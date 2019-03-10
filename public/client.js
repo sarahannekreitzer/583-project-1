@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log('The DOM is loaded');
   
 
-  // fetch
+  // fetching data from the API 
   
   fetch('/series')
     .then(resp => resp.json()).then((data) => {
@@ -24,10 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
   
   })
   
-  var arrName = [];
-    var arrComicsStats = [];
-    var arrSeriesStats = [];
-    var arrStoriesStats = [];
+  // building the chart
+  
+    
+    var arrCharacter = [];
+    var arrNumberComics = [];
+    var data =   
+  
+   data.map((characters) => {
+      var charactersname = character.data.fullName;
+      var comicsData = character.data.comics.available;
+
+      arrCharacter.push(characterslabel);
+      arrNumberComics.push(comicsData);
+    });
+  
   
   // Scroll Magic code, copied from scrollmagic.io
   var controller = new ScrollMagic.Controller({

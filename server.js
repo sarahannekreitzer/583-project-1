@@ -73,9 +73,6 @@ app.get('/characters', function(request, response) {
 
 });
 
-app.get('/creators', function(request, response) {
-  response.sendFile(__dirname + '/creators.json');
-});
 
 app.get('/series', function(request, response) {
   response.sendFile(__dirname + '/series.json');
@@ -83,20 +80,6 @@ app.get('/series', function(request, response) {
 
  
 
-/*marvel.characters.findByName('spider-man')
-  .then(function(res) {
-    console.log('Found character ID', res.data[0].name, res.data[0].id); 
-  
-      return new Promise(function(resolve, reject) { 
-      fs.writeFile("./spider-man.json", JSON.stringify(res.data[0], null, 2), (err) => {
-        if (err) reject(err);
-        else resolve();
-        console.log('Spidey has been made');
-      });
-    });    
-  })
-  .fail(console.error)
-  .done(); */
 
 
 // listen for requests. KEEP AT BOTTOM

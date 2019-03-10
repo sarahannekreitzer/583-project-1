@@ -131,11 +131,10 @@ h2 {
 }
 
 /* panel 3 */
-.grid-3 {
+/* .grid-3 {
   display:grid;
   grid-template-columns: 10px 1fr 1fr 1fr 10px;
   grid-template-rows: 75px 300px 300px;
-  grid-gap: 5px;
 }
 
 .panel-3-titles {
@@ -177,7 +176,7 @@ h2 {
   grid-column: 4/5;
   grid-row: 3/4;
   background-color: white;
-}
+} */
 
 .item { 
   align-self: flex-end;
