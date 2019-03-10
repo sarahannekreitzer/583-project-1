@@ -133,13 +133,29 @@ h2 {
 /* panel 3 */
 .grid-3 {
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 5% 27% 5% 27% 5% 27% 5%;
   grid-template-rows: 200px 600px;
 }
 
-.panel-3-title {
-  grid-template-row: 
+.panel-3-titles {
+  grid-column: 3/6;
+  background-color: white;
 } 
+
+.heroes {
+  grid-column: 2/3;
+  background-color: white;
+}
+
+.aliens {
+  grid-column: 4/5;
+  background-color: white;
+}
+
+.fights {
+  grid-column: 6/7;
+  background-color: white;
+}
 
 .item { 
   align-self: flex-end;
