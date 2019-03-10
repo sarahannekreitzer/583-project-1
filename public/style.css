@@ -106,20 +106,26 @@ h2 {
 .grid-2 {
   display:grid;
   grid-template-columns: fr;
-  grid-template-rows: 200px 400px 100px;
+  grid-template-rows: 200px 350px 100px;
 }
 
 #panel-2-title {
   text-align: center;
-  vertical-align: 
-  font-size: 80px;
+  vertical-align: bottom!important;
+  margin-top: 30px!important;
+  font-size: 45px;
 }
 #panel-2-text {
+  font-size: 17px;
   border-left:solid #881D1D 4px;
-  padding: 20px;
-  margin: 50px;
+  padding: 30px;
+  margin-bottom: 0px;
 }
 
 #panel-2-footer { 
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 40px;
   text-align: center;
 }
