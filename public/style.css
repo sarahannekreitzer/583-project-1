@@ -35,19 +35,19 @@ h2 {
 }*/
 
 .blue { 
-  background-color: maroon;
+  background-color: #881D1D;
+}
+
+.off-white { 
+  background-color: #FAF2EC;
 }
 
 .green { 
   background-color: green;
 }
 
-.turqoise { 
-  background-color: red;
-}
-
 .bordeaux { 
-  background-color: maroon;
+  background-color: #881D1D;
 }
 
 .white {
@@ -59,6 +59,7 @@ h2 {
   display: flex; 
   justify-content: center; 
   align-items: center;
+  flex-direction: column;
 }
 
 .flex-column{
@@ -82,10 +83,10 @@ h2 {
 .intro-panel { 
   color: white;
   font-size: 60px;
-  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 #outline {
-  -webkit-text-fill-color: maro;
+  -webkit-text-fill-color: #881D1D;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
 }
@@ -94,6 +95,13 @@ h2 {
   font-weight: 700;
   font-style: italic;
   font-size: 30px;
-  margin-top: 0px;
+  padding-top: 0px;
+}
+
+/* panel 2 */
+.grid-2 {
+  display:grid;
+  grid-template-columns: fr;
+  grid-template-rows: 100px 300px 100px;
 }
 
