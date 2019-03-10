@@ -130,5 +130,19 @@ h2 {
   text-align: center;
 }
 
+/* panel 3 */
+.grid-3 {
+  display:grid;
+  grid-template-columns: fr;
+  grid-template-rows: 200px 600px;
+}
+
+.item { 
+  align-self: flex-end;
+}
+
+
 /* slider */
+
+
 

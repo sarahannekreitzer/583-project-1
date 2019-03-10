@@ -17,6 +17,9 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+
+
+
 // Marvel API + Key
 var api = require('marvel-api');
  
